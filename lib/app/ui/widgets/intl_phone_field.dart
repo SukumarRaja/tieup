@@ -245,7 +245,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   blurRadius: 2,
                   spreadRadius: 2)
             ],
-            border: Border.all(color: Colors.grey, width: 1),
+            // border: Border.all(color: Colors.grey, width: 1),
             borderRadius: const BorderRadius.all(Radius.circular(25))),
         child: Row(
           children: [

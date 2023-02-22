@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tieup/app/controller/auth.dart';
 import '../../../animation/login_to_register.dart';
 import '../../../utility/helpers.dart';
+import '../../screens/otp_verify.dart';
 import '../../themes/colors.dart';
 import '../common_textform_field.dart';
 import '../intl_phone_field.dart';
@@ -47,11 +49,11 @@ class _LoginContentState extends State<LoginContent>
     );
   }
 
-  Widget loginButton(String title) {
+  Widget loginButton({required String text, required Function() onPressed}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 135, vertical: 16),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 14),
           backgroundColor: AppColors.primary,
@@ -60,7 +62,7 @@ class _LoginContentState extends State<LoginContent>
           shadowColor: Colors.black87,
         ),
         child: Text(
-          title,
+          text,
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -120,7 +122,9 @@ class _LoginContentState extends State<LoginContent>
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 110),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => const OtpVerify());
+        },
         child: const Text(
           'Forgot Password?',
           style: TextStyle(
@@ -138,9 +142,9 @@ class _LoginContentState extends State<LoginContent>
     createAccountContent = [
       Form(
           child: Padding(
-            padding: const EdgeInsets.only(right: 15,left: 15),
-            child: Column(
-        children: [
+        padding: const EdgeInsets.only(right: 15, left: 15),
+        child: Column(
+          children: [
             CommonTextFormField(
               hintText: "Username",
               prefixIcon: Icons.person_outline,
@@ -151,40 +155,51 @@ class _LoginContentState extends State<LoginContent>
               prefixIcon: Icons.mail_outline,
               controller: AuthController.to.email,
             ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IntlPhoneField(hintText: "Phone",),
-          ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IntlPhoneField(
+                hintText: "Phone",
+                maxLength: 10,
+                initialCountryCode: "IN",
+              ),
+            ),
             CommonTextFormField(
               hintText: "Password",
               prefixIcon: Icons.lock,
               controller: AuthController.to.password,
             ),
-        ],
-      ),
-          )),
-      loginButton('Sign Up'),
+          ],
+        ),
+      )),
+      loginButton(
+          text: 'Sign Up',
+          onPressed: () {
+            Get.to(() => const OtpVerify());
+          }),
       orDivider(),
       logos(),
     ];
 
     loginContent = [
-      Form(
-          child: Column(
-        children: [
-          CommonTextFormField(
-            hintText: "Email",
-            prefixIcon: Icons.mail_outline,
-            controller: AuthController.to.email,
-          ),
-          CommonTextFormField(
-            hintText: "Password",
-            prefixIcon: Icons.lock,
-            controller: AuthController.to.password,
-          ),
-        ],
-      )),
-      loginButton('Log In'),
+      Padding(
+        padding: EdgeInsets.only(right: 15, left: 15),
+        child: Form(
+            child: Column(
+          children: [
+            CommonTextFormField(
+              hintText: "Email",
+              prefixIcon: Icons.mail_outline,
+              controller: AuthController.to.email,
+            ),
+            CommonTextFormField(
+              hintText: "Password",
+              prefixIcon: Icons.lock,
+              controller: AuthController.to.password,
+            ),
+          ],
+        )),
+      ),
+      loginButton(text: 'Log In', onPressed: () {}),
       forgotPassword(),
     ];
 

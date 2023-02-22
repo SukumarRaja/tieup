@@ -10,6 +10,8 @@ TextEditingController name = TextEditingController();
 TextEditingController email = TextEditingController();
 TextEditingController password = TextEditingController();
 
+TextEditingController vEmail = TextEditingController();
+
   loginCheck() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     var token = preferences.getString('token');
