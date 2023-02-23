@@ -12,5 +12,6 @@ class AppColors {
   static const Color yellow = Color.fromRGBO(255, 198, 0, 1.0);
   static const Color grey = Color.fromRGBO(162, 162, 162, 1.0);
   static const Color white = Color.fromRGBO(255, 255, 255, 1.0);
+  static const Color skilled = Color.fromRGBO(13, 26, 71, 1.0);
   static const Color background = Color(0xFFD2FFF4);
 }

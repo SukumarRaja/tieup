@@ -123,7 +123,9 @@ class _LoginContentState extends State<LoginContent>
       padding: const EdgeInsets.symmetric(horizontal: 110),
       child: TextButton(
         onPressed: () {
-          Get.to(() => const OtpVerify());
+          Get.to(() => const OtpVerify(
+                comeFromRegister: false,
+              ));
         },
         child: const Text(
           'Forgot Password?',
@@ -174,7 +176,9 @@ class _LoginContentState extends State<LoginContent>
       loginButton(
           text: 'Sign Up',
           onPressed: () {
-            Get.to(() => const OtpVerify());
+            Get.to(() => const OtpVerify(
+                  comeFromRegister: true,
+                ));
           }),
       orDivider(),
       logos(),

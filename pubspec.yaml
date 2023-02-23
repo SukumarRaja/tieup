@@ -40,6 +40,10 @@ dependencies:
   flutter_svg: ^2.0.1
   shared_preferences: ^2.0.17
   connectivity_plus: ^3.0.3
+  decorated_icon: ^1.2.1
+  dots_indicator: ^2.1.0
+  carousel_slider: ^4.2.1
+  overlapped_carousel: ^1.0.1
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:tieup/app/ui/themes/colors.dart';
 
 class GreenBubble extends StatelessWidget {
   final Size size;
@@ -70,13 +71,15 @@ class GreenBubble extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
             child: Container(
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment(1, -0.6),
                   end: Alignment(-1, 0.8),
                   colors: [
-                    Color(0x803DE896),
-                    Color(0x4D76E3AE),
+                    AppColors.primary.withOpacity(.3),
+                    AppColors.gradient.withOpacity(.2),
+                    // Color(0x803DE896),
+                    // Color(0x4D76E3AE),
                   ],
                 ),
               ),
