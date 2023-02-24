@@ -1,7 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import '../screens/enquiry/enquiry.dart';
 import '../themes/colors.dart';
+import '../themes/font_size.dart';
 import 'common_text.dart';
 
 commonAlertDialog(BuildContext context,
@@ -426,6 +429,162 @@ dynamic loadingAlertDialog(BuildContext context, {required Widget child}) {
   showDialog(
     barrierDismissible: false,
     context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+locationSet(BuildContext context) {
+  var media = MediaQuery.of(context).size;
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(15.0),
+        ),
+      ),
+      // backgroundColor: Colors.grey.shade300,
+      content: Stack(
+        children: [
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CommonText(
+                text: "Set your location",
+                fontSize: AppFontSize.twenty,
+                fontWeight: FontWeight.bold,
+              ),
+              SvgPicture.asset(
+                "assets/svgs/24.svg",
+                height: 100,
+              ),
+              CommonText(
+                text: "exploring services near you",
+                fontSize: AppFontSize.sixteen,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.back();
+                  Get.to(()=>Enquiry());
+                },
+                child: Container(
+                  width: media.width,
+                  margin: const EdgeInsets.all(15.0),
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: AppColors.primary,
+                    gradient: const LinearGradient(
+                        colors: [AppColors.primary, AppColors.gradient],
+                        begin: Alignment.topRight,
+                        end: Alignment.topLeft),
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: AppColors.white,
+                        ),
+                        SizedBox(
+                          width: media.width * 0.01,
+                        ),
+                        CommonText(
+                          text: "Your current location",
+                          fontColor: AppColors.white,
+                          fontSize: AppFontSize.twenty,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: media.width,
+                  margin:
+                      const EdgeInsets.only(bottom: 15.0, right: 15, left: 15),
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: AppColors.white,
+                      border: Border.all(color: AppColors.grey)
+                      // gradient: const LinearGradient(
+                      //     colors: [AppColors.primary, AppColors.gradient],
+                      //     begin: Alignment.topRight,
+                      //     end: Alignment.topLeft),
+                      ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search,
+                          color: AppColors.black,
+                        ),
+                        SizedBox(
+                          width: media.width * 0.01,
+                        ),
+                        CommonText(
+                          text: "Some other location",
+                          fontColor: AppColors.black,
+                          fontSize: AppFontSize.twenty,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              CommonText(
+                text:
+                    "We only access your location while you are using\nthe app to improve your experience",
+                fontSize: AppFontSize.fourteen,
+                fontColor: AppColors.black.withOpacity(.4),
+                textAlign: TextAlign.center,
+              ),
+              Container(
+                width: media.width,
+                height: 100,
+                margin: EdgeInsets.only(top: 15, bottom: 15),
+                decoration: BoxDecoration(
+                    color: AppColors.white.withOpacity(.7),
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                            "https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2021/09/27/160399-flipkar-saleflipkar-twitter.jpg?itok=u0Yll_bl")),
+                    boxShadow: [
+                      BoxShadow(
+                          color: AppColors.grey.withOpacity(.3),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0.2, 0.2))
+                    ]),
+              ),
+            ],
+          ),
+          Positioned(
+              right: 0,
+              child: GestureDetector(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Icon(Icons.cancel_outlined)))
+        ],
+      ));
+
+  // show the dialog
+  showDialog(
+    context: context,
+    barrierDismissible: false,
     builder: (BuildContext context) {
       return alert;
     },

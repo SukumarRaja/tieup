@@ -16,8 +16,8 @@ import '../../widgets/banner.dart';
 import '../../widgets/common_alert.dart';
 import '../../widgets/main/green_bubble.dart';
 
-class Home extends StatelessWidget {
-  Home({Key? key}) : super(key: key);
+class Demo extends StatelessWidget {
+  Demo({Key? key}) : super(key: key);
 
   Widget topWidget(double screenWidth) {
     return Transform.rotate(
@@ -142,25 +142,25 @@ class Home extends StatelessWidget {
                       height: media.height * 0.01,
                     ),
                     Obx(
-                      () => SliderController.to.loadingSliders == true
+                          () => SliderController.to.loadingSliders == true
                           ? const Text("Loading")
                           : Obx(() => CommonSlider(
-                                // imageSliders: SliderController.to.imageSlider,
-                                dbImage: SliderController.to.dbImage,
-                                imageSliders: const [
-                                  "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
-                                  "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
-                                  "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
-                                ],
-                              )),
+                        // imageSliders: SliderController.to.imageSlider,
+                        dbImage: SliderController.to.dbImage,
+                        imageSliders: const [
+                          "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
+                          "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+                          "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
+                        ],
+                      )),
                     ),
                     Container(
                       height: 50,
                       width: media.width,
                       // margin: EdgeInsets.only(right: 8.0, left: 8.0),
                       decoration: const BoxDecoration(
-                          // color: AppColors.secondary,
-                          ),
+                        // color: AppColors.secondary,
+                      ),
                       child: Row(
                         children: [
                           SizedBox(
@@ -291,7 +291,7 @@ class Home extends StatelessWidget {
 
                     Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: media.width * 0.04),
+                      EdgeInsets.symmetric(horizontal: media.width * 0.04),
                       child: Row(
                         children: [
                           CommonText(
@@ -304,252 +304,252 @@ class Home extends StatelessWidget {
                       ),
                     ),
 
-                    // Center(
-                    //   //Wrap the OverlappedCarousel widget with SizedBox to fix a height. No need to specify width.
-                    //   child: SizedBox(
-                    //     height: min(
-                    //         media.width / 3.3 * (16 / 9), media.height * .9),
-                    //     child: OverlappedCarousel(
-                    //       widgets: widgets, //List of widgets
-                    //       currentIndex: 2,
-                    //       onClicked: (index) {
-                    //         ScaffoldMessenger.of(context).showSnackBar(
-                    //           SnackBar(
-                    //             content: Text("You clicked at $index"),
-                    //           ),
-                    //         );
-                    //       },
-                    //     ),
-                    //   ),
-                    // ),
-
-                    Container(
-                      // color: Colors.white,
-                      padding: EdgeInsets.all(15.0),
-                      child: Table(
-                        border: TableBorder.all(color: Colors.black,borderRadius: BorderRadius.circular(8.0)),
-                        children: [
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-                          TableRow(children: [
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              margin: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                            ),
-
-
-
-                          ]),
-
-
-                        ],
+                    Center(
+                      //Wrap the OverlappedCarousel widget with SizedBox to fix a height. No need to specify width.
+                      child: SizedBox(
+                        height: min(
+                            media.width / 3.3 * (16 / 9), media.height * .9),
+                        child: OverlappedCarousel(
+                          widgets: widgets, //List of widgets
+                          currentIndex: 2,
+                          onClicked: (index) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text("You clicked at $index"),
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
+
+                    // Container(
+                    //   // color: Colors.white,
+                    //   padding: EdgeInsets.all(15.0),
+                    //   child: Table(
+                    //     border: TableBorder.all(color: Colors.black,borderRadius: BorderRadius.circular(8.0)),
+                    //     children: [
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //       TableRow(children: [
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //         Container(
+                    //           height: 80,
+                    //           width: 80,
+                    //           margin: EdgeInsets.all(10.0),
+                    //           decoration: BoxDecoration(
+                    //               color: AppColors.white,
+                    //               image: DecorationImage(
+                    //                   fit: BoxFit.cover,
+                    //                   image: NetworkImage(
+                    //                       "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
+                    //         ),
+                    //
+                    //
+                    //
+                    //       ]),
+                    //
+                    //
+                    //     ],
+                    //   ),
+                    // ),
 
 
 
@@ -572,7 +572,7 @@ class Home extends StatelessWidget {
                         children: [
                           Padding(
                             padding:
-                                const EdgeInsets.only(left: 15.0, top: 10.0),
+                            const EdgeInsets.only(left: 15.0, top: 10.0),
                             child: CommonText(
                               text: "Video Ad Content",
                               fontWeight: FontWeight.w500,
@@ -584,7 +584,7 @@ class Home extends StatelessWidget {
                                 horizontal: 15.0, vertical: 8.0),
                             child: CommonText(
                               text:
-                                  "Flutter plugin for playing or streaming YouTube videos inline using the official iFrame Player API",
+                              "Flutter plugin for playing or streaming YouTube videos inline using the official iFrame Player API",
                               fontWeight: FontWeight.w500,
                               fontSize: AppFontSize.fourteen,
                               fontColor: AppColors.black.withOpacity(.5),
@@ -667,17 +667,17 @@ class Home extends StatelessWidget {
                       height: media.height * 0.02,
                     ),
                     Obx(
-                      () => SliderController.to.loadingSliders == true
+                          () => SliderController.to.loadingSliders == true
                           ? const Text("Loading")
                           : Obx(() => CommonSlider(
-                                // imageSliders: SliderController.to.imageSlider,
-                                dbImage: SliderController.to.dbImage,
-                                imageSliders: const [
-                                  "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
-                                  "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
-                                  "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
-                                ],
-                              )),
+                        // imageSliders: SliderController.to.imageSlider,
+                        dbImage: SliderController.to.dbImage,
+                        imageSliders: const [
+                          "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
+                          "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+                          "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
+                        ],
+                      )),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
@@ -756,7 +756,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "25.6 L",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -833,7 +833,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "300",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -910,7 +910,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "50",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -987,7 +987,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "25",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1054,7 +1054,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "1000 Members",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1076,7 +1076,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "3k",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1143,7 +1143,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "1000 Members",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1165,7 +1165,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "750",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1232,7 +1232,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "1000 Members",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1254,7 +1254,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "500",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1321,7 +1321,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "1000 Members",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1343,7 +1343,7 @@ class Home extends StatelessWidget {
                                     CommonText(
                                       text: "100",
                                       fontColor:
-                                          AppColors.black.withOpacity(.5),
+                                      AppColors.black.withOpacity(.5),
                                       fontSize: AppFontSize.fourteen,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -1512,11 +1512,11 @@ class Home extends StatelessWidget {
                             ),
                             child: Center(
                                 child: CommonText(
-                              text: "#FR265029FEB26512",
-                              fontColor: AppColors.grey,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                            )),
+                                  text: "#FR265029FEB26512",
+                                  fontColor: AppColors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1,
+                                )),
                           )
                         ],
                       ),
@@ -1557,7 +1557,7 @@ class Home extends StatelessWidget {
 
   List<Widget> widgets = List.generate(
     7,
-    (index) => ClipRRect(
+        (index) => ClipRRect(
       borderRadius: const BorderRadius.all(
         Radius.circular(5.0),
       ),

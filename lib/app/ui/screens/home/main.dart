@@ -5,6 +5,7 @@ import '../../../controller/dash_board.dart';
 import '../../../controller/main.dart';
 import '../../../controller/slider.dart';
 import '../../themes/colors.dart';
+import 'demo_main.dart';
 import 'home.dart';
 
 class HomeMain extends StatelessWidget {
@@ -13,7 +14,7 @@ class HomeMain extends StatelessWidget {
     Center(child: Text("page 1")),
     Text("page 2"),
     Home(),
-    Text("page 3"),
+    Demo(),
     Text("page 5"),
   ];
 
@@ -58,7 +59,7 @@ class HomeMain extends StatelessWidget {
                       label: "Home"),
                   BottomNavigationBarItem(
                       icon: buildDecoratedIcon(icon: Icons.home_filled),
-                      label: "4"),
+                      label: "Demo"),
                   BottomNavigationBarItem(
                       icon: buildDecoratedIcon(icon: Icons.home_filled),
                       label: "5"),

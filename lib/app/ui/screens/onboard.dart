@@ -221,6 +221,7 @@ class _OnBoardingScreenState extends State<OnBoarding> {
   SvgPicture buildSvgPicture({required imgSrc}) {
     return SvgPicture.asset(
       "assets/svgs/$imgSrc.svg",
+      height: 250,
     );
   }
 }
