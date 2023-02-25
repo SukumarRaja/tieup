@@ -1,7 +1,7 @@
 import 'package:decorated_icon/decorated_icon.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../controller/slider.dart';
 import '../../../../../utility/degings.dart';
 import '../../../../themes/colors.dart';
@@ -9,17 +9,22 @@ import '../../../../themes/font_size.dart';
 import '../../../../widgets/banner.dart';
 import '../../../../widgets/common_text.dart';
 import '../../../../widgets/main/green_bubble.dart';
+import '../../../../widgets/men/sheet1.dart';
+import '../../../../widgets/men/sheet2.dart';
 
 class MenProducts extends StatelessWidget {
   const MenProducts({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double dotIndex = 0;
+
     var media = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
+            //background designs
             Positioned(
               top: -160,
               left: -30,
@@ -31,6 +36,8 @@ class MenProducts extends StatelessWidget {
               child: bottomWidget(media.width),
             ),
             GreenBubble(size: media),
+
+            //back and tittle
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Row(
@@ -50,13 +57,13 @@ class MenProducts extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const CommonText(
+                      children: const [
+                        CommonText(
                           text: "Enquiry",
                           fontSize: AppFontSize.sixteen,
                           // fontWeight: FontWeight.w100,
                         ),
-                        const CommonText(
+                        CommonText(
                           text: "Shopping/Fashion/Mens",
                           fontSize: AppFontSize.eighteen,
                           // fontWeight: FontWeight.w100,
@@ -64,19 +71,22 @@ class MenProducts extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
-                  Icon(Icons.search),
+                  const Spacer(),
+                  const Icon(Icons.search),
                   SizedBox(
                     width: media.width * 0.04,
                   )
                 ],
               ),
             ),
+
+            // running sliders and body
             Padding(
               padding: const EdgeInsets.only(top: 70.0),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    // running sliders
                     Obx(
                       () => SliderController.to.loadingSliders == true
                           ? const Text("Loading")
@@ -90,25 +100,19 @@ class MenProducts extends StatelessWidget {
                                 ],
                               )),
                     ),
-                    Container(
+
+                    // location and dropdown
+                    SizedBox(
                       height: 50,
                       width: media.width,
-                      // margin: EdgeInsets.only(right: 8.0, left: 8.0),
-                      decoration: const BoxDecoration(
-                          // color: AppColors.secondary,
-                          ),
                       child: Row(
                         children: [
                           SizedBox(
                             width: media.width * 0.02,
                           ),
-                          // CommonText(
-                          //   text: "All Features",
-                          //   fontSize: AppFontSize.sixteen,
-                          //   fontWeight: FontWeight.w600,
-                          // ),
-                          // Spacer(),
-                          DecoratedIcon(
+
+                          //location
+                          const DecoratedIcon(
                             Icons.location_on,
                             color: AppColors.primary,
                             size: 35,
@@ -119,7 +123,7 @@ class MenProducts extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  CommonText(
+                                  const CommonText(
                                     text: "Coimbatore",
                                     fontWeight: FontWeight.w500,
                                     fontSize: AppFontSize.fifteen,
@@ -137,7 +141,9 @@ class MenProducts extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
+
+                          //dropdown
                           Container(
                             height: 35,
                             width: 120,
@@ -149,7 +155,7 @@ class MenProducts extends StatelessWidget {
                                       color: AppColors.black.withOpacity(.1),
                                       spreadRadius: 1,
                                       blurRadius: 1,
-                                      offset: Offset(0.2, 0.3))
+                                      offset: const Offset(0.2, 0.3))
                                 ]),
                             child: Center(
                                 child: Row(
@@ -157,11 +163,12 @@ class MenProducts extends StatelessWidget {
                                 SizedBox(
                                   width: media.width * 0.02,
                                 ),
-                                CommonText(
+                                const CommonText(
                                   text: "T-Shirt",
                                 ),
-                                Spacer(),
-                                Icon(Icons.arrow_drop_down_circle_outlined),
+                                const Spacer(),
+                                const Icon(
+                                    Icons.arrow_drop_down_circle_outlined),
                                 SizedBox(
                                   width: media.width * 0.02,
                                 ),
@@ -175,13 +182,12 @@ class MenProducts extends StatelessWidget {
                       ),
                     ),
 
-                    //sheet
-
+                    //sheet1 tittle
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: media.width * 0.04),
                       child: Row(
-                        children: [
+                        children: const [
                           CommonText(
                             text: "Sheet 1",
                             fontColor: AppColors.skilled,
@@ -192,225 +198,42 @@ class MenProducts extends StatelessWidget {
                       ),
                     ),
 
-                    Container(
-                        width: media.width,
-                        margin: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: AppColors.white,
-                            borderRadius: BorderRadius.circular(8.0),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: AppColors.grey.withOpacity(.3),
-                                  spreadRadius: 1,
-                                  blurRadius: 1,
-                                  offset: Offset(0.2, 0.2))
-                            ]),
-                        child: Stack(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: 60,
-                                      margin: EdgeInsets.all(10.0),
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: AppColors.white,
-                                          image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: NetworkImage(
-                                                  "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        CommonText(
-                                          text: "Fashion Trends",
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: AppFontSize.sixteen,
-                                          fontColor: AppColors.black,
-                                        ),
-                                        SizedBox(
-                                          height: media.height * 0.004,
-                                        ),
-                                        CommonText(
-                                          text: "Retail Shopping",
-                                          fontSize: AppFontSize.fourteen,
-                                          fontColor:
-                                              AppColors.black.withOpacity(.5),
-                                        ),
-                                        SizedBox(
-                                          height: media.height * 0.004,
-                                        ),
-                                        CommonText(
-                                          text: "Anna Nagar, Chennai",
-                                          fontSize: AppFontSize.fourteen,
-                                          fontColor:
-                                              AppColors.black.withOpacity(.5),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Container(
-                                      height: 35,
-                                      // width: 250,
-                                      margin: EdgeInsets.all(10.0),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                          color: AppColors.white,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: AppColors.black
-                                                    .withOpacity(.1),
-                                                spreadRadius: 1,
-                                                blurRadius: 1,
-                                                offset: Offset(0.2, 0.3))
-                                          ]),
-                                      child: Row(
-                                        children: [
-                                          SizedBox(
-                                            width: media.width * 0.02,
-                                          ),
-                                          CommonText(
-                                            text: "Open now",
-                                            fontColor: AppColors.primary,
-                                          ),
-                                          SizedBox(
-                                            width: media.width * 0.01,
-                                          ),
-                                          Container(
-                                            height: 15,
-                                            width: 2,
-                                            color:
-                                                AppColors.grey.withOpacity(.4),
-                                          ),
-                                          SizedBox(
-                                            width: media.width * 0.01,
-                                          ),
-                                          CommonText(
-                                            text: "10:30Am - 08:00PM",
-                                          ),
-                                          SizedBox(
-                                            width: media.width * 0.01,
-                                          ),
-                                          Icon(Icons.arrow_drop_down_outlined),
-                                          SizedBox(
-                                            width: media.width * 0.02,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: media.width * 0.02,
-                                    ),
-                                    CommonText(
-                                      text: "1.8 km, away",
-                                      fontSize: AppFontSize.fourteen,
-                                      fontColor:
-                                          AppColors.black.withOpacity(.5),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      right: 8.0, left: 8.0),
-                                  child: Divider(
-                                    thickness: 2,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.all(8.0),
-                                      margin: EdgeInsets.all(8.0),
-                                      decoration: BoxDecoration(
-                                          color: AppColors.green,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: AppColors.grey
-                                                    .withOpacity(.3),
-                                                spreadRadius: 1,
-                                                blurRadius: 1,
-                                                offset: Offset(0.2, 0.2))
-                                          ]),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          CommonText(
-                                            text: "4.6",
-                                            fontColor: AppColors.white,
-                                          ),
-                                          Icon(
-                                            Icons.star,
-                                            color: AppColors.white,
-                                            size: 15,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Spacer(),
-                                    Container(
-                                      padding: EdgeInsets.only(
-                                          bottom: 8.0,
-                                          top: 8.0,
-                                          right: 20.0,
-                                          left: 20.0),
-                                      margin: EdgeInsets.all(8.0),
-                                      decoration: BoxDecoration(
-                                        color: AppColors.green,
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: AppColors.grey
-                                                  .withOpacity(.3),
-                                              spreadRadius: 1,
-                                              blurRadius: 1,
-                                              offset: Offset(0.2, 0.2))
-                                        ],
-                                        gradient: const LinearGradient(
-                                            colors: [
-                                              AppColors.primary,
-                                              AppColors.gradient
-                                            ],
-                                            begin: Alignment.topRight,
-                                            end: Alignment.topLeft),
-                                      ),
-                                      child: CommonText(
-                                        text: "Get Info",
-                                        fontColor: AppColors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            Positioned(
-                                right: 10,
-                                top: 10,
-                                child: Icon(
-                                  Icons.favorite_border_sharp,
-                                  color: AppColors.gradient,
-                                ))
-                          ],
-                        )),
+                    //sheet1
+                    SizedBox(
+                      height: media.height * 0.25,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: 3,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, int index) {
+                              return const SheetOneCard();
+                            }),
+                      ),
+                    ),
 
+                    //dots indicator
+
+                    DotsIndicator(
+                      dotsCount: 3,
+                      position: dotIndex,
+                      decorator: DotsDecorator(
+                        color: Colors.grey.withAlpha(99),
+                        activeColor: AppColors.primary,
+                        size: const Size.square(7.0),
+                        activeSize: const Size(7.0, 7.0),
+                        activeShape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0)),
+                      ),
+                    ),
+
+                    //sheet2 tittle
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: media.width * 0.04),
                       child: Row(
-                        children: [
+                        children: const [
                           CommonText(
                             text: "Sheet 2",
                             fontColor: AppColors.skilled,
@@ -420,126 +243,20 @@ class MenProducts extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: AppColors.white,
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                margin: EdgeInsets.all(10.0),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: AppColors.white,
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                            "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                              ),
-                              CommonText(
-                                text: "The Covai\nMens Wear",
-                                textAlign: TextAlign.center,
-                                fontWeight: FontWeight.w500,
-                                fontSize: AppFontSize.eighteen,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0, right: 8, left: 8,top: 2),
-                                child: CommonText(
-                                  text: "Retail Shopping",
-                                  textAlign: TextAlign.center,
-                                  fontColor: AppColors.black.withOpacity(.5),
-                                  fontSize: AppFontSize.fourteen,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: AppColors.white,
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                margin: EdgeInsets.all(10.0),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: AppColors.white,
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                            "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                              ),
-                              CommonText(
-                                text: "The Covai\nMens Wear",
-                                textAlign: TextAlign.center,
-                                fontWeight: FontWeight.w500,
-                                fontSize: AppFontSize.eighteen,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0, right: 8, left: 8,top: 2),
-                                child: CommonText(
-                                  text: "Retail Shopping",
-                                  textAlign: TextAlign.center,
-                                  fontColor: AppColors.black.withOpacity(.5),
-                                  fontSize: AppFontSize.fourteen,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: AppColors.white,
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                margin: EdgeInsets.all(10.0),
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: AppColors.white,
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                            "https://play-lh.googleusercontent.com/3yi7Fo-OtJUZ7nAlB8WB0v1WTOdz76Z1kqvuuubhNlHzU9jhP97TnI-6eVThWZMV31A"))),
-                              ),
-                              CommonText(
-                                text: "The Covai\nMens Wear",
-                                textAlign: TextAlign.center,
-                                fontWeight: FontWeight.w500,
-                                fontSize: AppFontSize.eighteen,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 8.0, right: 8, left: 8,top: 2),
-                                child: CommonText(
-                                  text: "Retail Shopping",
-                                  textAlign: TextAlign.center,
-                                  fontColor: AppColors.black.withOpacity(.5),
-                                  fontSize: AppFontSize.fourteen,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+
+                    //sheet2
+                    SizedBox(
+                      height: media.height * 0.20,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: 5,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, int index) {
+                              return const SheetTwoCard();
+                            }),
+                      ),
                     ),
 
                     // last add
@@ -549,8 +266,10 @@ class MenProducts extends StatelessWidget {
                       // margin: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                           color: AppColors.white.withOpacity(.7),
-                          borderRadius: BorderRadius.circular(8.0),
-                          image: DecorationImage(
+                          borderRadius: const BorderRadius.only(
+                              topRight: Radius.circular(8.0),
+                              topLeft: Radius.circular(8.0)),
+                          image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
                                   "https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2021/09/27/160399-flipkar-saleflipkar-twitter.jpg?itok=u0Yll_bl")),
@@ -559,7 +278,7 @@ class MenProducts extends StatelessWidget {
                                 color: AppColors.grey.withOpacity(.3),
                                 spreadRadius: 1,
                                 blurRadius: 1,
-                                offset: Offset(0.2, 0.2))
+                                offset: const Offset(0.2, 0.2))
                           ]),
                     ),
                   ],

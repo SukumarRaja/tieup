@@ -44,6 +44,7 @@ dependencies:
   dots_indicator: ^2.1.0
   carousel_slider: ^4.2.1
   overlapped_carousel: ^1.0.1
+  curved_navigation_bar: ^1.0.3
 
 dev_dependencies:
   flutter_test:

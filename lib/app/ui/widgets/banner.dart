@@ -25,14 +25,14 @@ class _CommonSliderState extends State<CommonSlider> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
-              autoPlay: false,
+              autoPlay: true,
               autoPlayInterval: const Duration(seconds: 5),
               autoPlayAnimationDuration: const Duration(milliseconds: 800),
               autoPlayCurve: Curves.fastOutSlowIn,
               pauseAutoPlayOnTouch: true,
               viewportFraction: 0.89,
               pageSnapping: true,
-              height: 130,
+              height: 150,
               onPageChanged: (index, test) {
                 setState(() {
                   dotIndex = double.parse(index.toString());
