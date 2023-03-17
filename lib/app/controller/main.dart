@@ -41,6 +41,14 @@ class MainController extends GetxController {
     _internet.value = value;
   }
 
+  final _termsAndConditions = false.obs;
+
+  get termsAndConditions => _termsAndConditions.value;
+
+  set termsAndConditions(value) {
+    _termsAndConditions.value = value;
+  }
+
   setSelectedLanguageToLocalDevice({required language}) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString("chooseLanguage", language);

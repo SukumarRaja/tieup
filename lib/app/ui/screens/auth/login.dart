@@ -7,8 +7,8 @@ import '../../widgets/auth/login.dart';
 import '../../widgets/main/green_bubble.dart';
 
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
 
   Widget topWidget(double screenWidth) {
     return Transform.rotate(

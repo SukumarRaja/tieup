@@ -39,7 +39,7 @@ class _InitialState extends State<Initial> {
       if (val == "noToken") {
         Future.delayed(const Duration(seconds: 2), () {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const LoginScreen()));
+              MaterialPageRoute(builder: (context) => const Login()));
         });
       } else if (val == "token") {
         // Navigator.pushAndRemoveUntil(

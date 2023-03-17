@@ -1,12 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tieup/app/controller/auth.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../animation/login_to_register.dart';
+import '../../../controller/main.dart';
 import '../../../utility/helpers.dart';
+import '../../../utility/utility.dart';
 import '../../screens/otp_verify.dart';
 import '../../themes/colors.dart';
+import '../../themes/font_size.dart';
+import '../common_text.dart';
 import '../common_textform_field.dart';
 import '../intl_phone_field.dart';
+import 'gender_card.dart';
 import 'login_title.dart';
 
 class LoginContent extends StatefulWidget {
@@ -141,6 +149,7 @@ class _LoginContentState extends State<LoginContent>
 
   @override
   void initState() {
+    // var media = MediaQuery.of(context).size;
     createAccountContent = [
       Form(
           child: Padding(
@@ -157,8 +166,8 @@ class _LoginContentState extends State<LoginContent>
               prefixIcon: Icons.mail_outline,
               controller: AuthController.to.email,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: IntlPhoneField(
                 hintText: "Phone",
                 maxLength: 10,
@@ -170,18 +179,162 @@ class _LoginContentState extends State<LoginContent>
               prefixIcon: Icons.lock,
               controller: AuthController.to.password,
             ),
+            Container(
+              margin: const EdgeInsets.all(8.0),
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50.0),
+                color: AppColors.white,
+              ),
+              child: Center(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GenderCard(
+                          gender: "Male",
+                          onPressed: () {
+                            AuthController.to.selectedGender = "Male";
+                            AuthController.to.selectGenderIndex = 0;
+                          },
+                          index: 0,
+                        ),
+                        GenderCard(
+                          gender: "Female",
+                          onPressed: () {
+                            AuthController.to.selectedGender = "Female";
+                            AuthController.to.selectGenderIndex = 1;
+                          },
+                          index: 1,
+                        ),
+                        GenderCard(
+                          gender: "Others",
+                          onPressed: () {
+                            AuthController.to.selectedGender = "Others";
+                            AuthController.to.selectGenderIndex = 2;
+                          },
+                          index: 2,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       )),
-      loginButton(
-          text: 'Sign Up',
-          onPressed: () {
-            Get.to(() => const OtpVerify(
-                  comeFromRegister: true,
-                ));
-          }),
-      orDivider(),
-      logos(),
+      SizedBox(
+        height: Get.height * 0.02,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Obx(() => InkWell(
+                onTap: () {
+                  MainController.to.termsAndConditions =
+                      !MainController.to.termsAndConditions;
+                },
+                child: Container(
+                  height: 28,
+                  width: 28,
+                  decoration: BoxDecoration(
+                      // shape: BoxShape.circle,
+                    borderRadius: BorderRadius.circular(5.0),
+                      color: MainController.to.termsAndConditions == true
+                          ? AppColors.primary
+                          : AppColors.secondary),
+                  child: Icon(Icons.done_rounded,size: 18,
+                      color: MainController.to.termsAndConditions == true
+                          ? AppColors.white
+                          : AppColors.secondary),
+                ),
+              )),
+          SizedBox(
+            width: Get.width * 0.05,
+          ),
+
+          //terms and conditions
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CommonText(
+                    text: "I agree to the ",
+                    fontSize: AppFontSize.sixteen,
+                    fontColor: AppColors.black,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      launchInWebViewOrVC(Uri.parse(
+                          "https://www.termsandcondiitionssample.com/"));
+                    },
+                    child: CommonText(
+                      text: "Terms &",
+                      fontSize: AppFontSize.sixteen,
+                      fontColor: AppColors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: Get.width * 0.005,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      launchInWebViewOrVC(Uri.parse(
+                          "https://www.termsandcondiitionssample.com/"));
+                    },
+                    child: CommonText(
+                      text: "Conditions ",
+                      fontSize: AppFontSize.sixteen,
+                      fontColor: AppColors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  CommonText(
+                    text: "and ",
+                    fontSize: AppFontSize.sixteen,
+                    fontColor: AppColors.black,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      launchInWebViewOrVC(Uri.parse(
+                          "https://www.privacypolicygenerator.info/"));
+                    },
+                    child: CommonText(
+                      text: "Privacy Policy",
+                      fontSize: AppFontSize.sixteen,
+                      fontColor: AppColors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+      Obx(() => MainController.to.termsAndConditions == true
+          ? loginButton(
+              text: 'Sign Up',
+              onPressed: () {
+                Get.to(() => const OtpVerify(
+                      comeFromRegister: true,
+                    ));
+              })
+          : const SizedBox()),
+      // orDivider(),
+      // logos(),
     ];
 
     loginContent = [
@@ -239,38 +392,40 @@ class _LoginContentState extends State<LoginContent>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Positioned(
-          top: 136,
-          left: 24,
-          child: TopText(),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 100),
-          child: Stack(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: createAccountContent,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: loginContent,
-              ),
-            ],
+    return SafeArea(
+      child: Stack(
+        children: [
+          const Positioned(
+            top: 10,
+            left: 24,
+            child: TopText(),
           ),
-        ),
-        const Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding: EdgeInsets.only(bottom: 50),
-            child: BottomText(),
+          Padding(
+            padding: const EdgeInsets.only(top: 0),
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: createAccountContent,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: loginContent,
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 50),
+              child: BottomText(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

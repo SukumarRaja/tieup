@@ -6,11 +6,35 @@ import 'package:tieup/app/ui/screens/initial.dart';
 class AuthController extends GetxController {
   static AuthController get to => Get.put(AuthController());
 
-TextEditingController name = TextEditingController();
-TextEditingController email = TextEditingController();
-TextEditingController password = TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
 
-TextEditingController vEmail = TextEditingController();
+  TextEditingController vEmail = TextEditingController();
+
+  final _isSelectGender = false.obs;
+
+  get isSelectGender => _isSelectGender.value;
+
+  set isSelectGender(value) {
+    _isSelectGender.value = value;
+  }
+
+  final _selectedGender = "".obs;
+
+  get selectedGender => _selectedGender.value;
+
+  set selectedGender(value) {
+    _selectedGender.value = value;
+  }
+
+  final _selectGenderIndex = 3.obs;
+
+  get selectGenderIndex => _selectGenderIndex.value;
+
+  set selectGenderIndex(value) {
+    _selectGenderIndex.value = value;
+  }
 
   loginCheck() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -53,7 +77,6 @@ TextEditingController vEmail = TextEditingController();
     await Get.off(() => const Initial());
     return onBoard;
   }
-
 
   storeLocalDevice({required Map body}) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
