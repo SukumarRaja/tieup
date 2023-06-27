@@ -7,12 +7,12 @@ class AppRoutes {
   static final routes = [
     GetPage(
       name: "/",
-      page: () =>  HomeMain(),
+      page: () =>  Login(),
       transition: Transition.zoom,
     ),
     GetPage(
-      name: "/login",
-      page: () =>  Login(),
+      name: "/homeMain",
+      page: () =>  HomeMain(),
       transition: Transition.zoom,
     ),
   ];

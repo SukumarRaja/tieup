@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       },
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        initialRoute: '/homeMain',
         getPages: AppRoutes.routes,
         // theme: ThemeData(
         //   scaffoldBackgroundColor: AppColors.background,

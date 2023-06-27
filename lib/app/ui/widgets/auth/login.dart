@@ -396,7 +396,7 @@ class _LoginContentState extends State<LoginContent>
       child: Stack(
         children: [
           const Positioned(
-            top: 10,
+            top: 50,
             left: 24,
             child: TopText(),
           ),
@@ -420,7 +420,7 @@ class _LoginContentState extends State<LoginContent>
           const Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 50),
+              padding: EdgeInsets.only(bottom: 10),
               child: BottomText(),
             ),
           ),

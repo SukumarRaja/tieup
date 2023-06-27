@@ -24,6 +24,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: Drawer(
+        elevation: 5,
+        // shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.only(
+        //         topRight: Radius.circular(15),
+        //         bottomRight: Radius.circular(15))),
+      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -49,23 +56,36 @@ class Home extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: media.height * 0.01,
-                    ),
+                    // SizedBox(
+                    //   height: media.height * 0.01,
+                    // ),
 
                     //running banner or sliders
-                    Obx(
-                      () => SliderController.to.loadingSliders == true
-                          ? const Text("Loading")
-                          : CommonSlider(
-                              // imageSliders: SliderController.to.imageSlider,
-                              dbImage: SliderController.to.dbImage,
-                              imageSliders: const [
-                                "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
-                                "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+                    // Obx(
+                    //   () => SliderController.to.loadingSliders == true
+                    //       ? const Text("Loading")
+                    //       : CommonSlider(
+                    //           // imageSliders: SliderController.to.imageSlider,
+                    //           dbImage: SliderController.to.dbImage,
+                    //           imageSliders: const [
+                    //             "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
+                    //             "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+                    //             "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
+                    //           ],
+                    //         ),
+                    // ),
+
+                    Container(
+                      height: 150,
+                      width: media.width,
+                      margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
                                 "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
-                              ],
-                            ),
+                              ))),
                     ),
 
                     // location text
