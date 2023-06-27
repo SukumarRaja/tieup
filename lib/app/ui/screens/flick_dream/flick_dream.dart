@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tieup/app/ui/themes/colors.dart';
 import 'package:tieup/app/ui/themes/font_size.dart';
 import 'package:tieup/app/ui/widgets/common_text.dart';
-import '../../utility/degings.dart';
-import '../widgets/main/green_bubble.dart';
-import 'flick_dream/flick_dream.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+class FlickDream extends StatelessWidget {
+  const FlickDream({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,13 +184,7 @@ class Profile extends StatelessWidget {
                   crossAxisCount: 2, childAspectRatio: 1.6),
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  onTap: () {
-                    if (index == 0) {
-                    } else if (index == 1) {
-                    } else if (index == 2) {
-                      Get.to(() => FlickDream());
-                    } else if (index == 3) {}
-                  },
+                  onTap: () {},
                   child: Container(
                     margin: const EdgeInsets.all(8),
                     // padding: EdgeInsets.all(15),
