@@ -1,9 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'app/controller/main.dart';
 import 'app/routes/routes.dart';
 import 'app/ui/themes/colors.dart';
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +24,8 @@ void main() {
     systemNavigationBarColor: Colors.black, // navigation bar color
     statusBarColor: AppColors.gradient, // status bar color
   ));
+  HttpOverrides.global = MyHttpOverrides();
+
   MainController.to.checkInternetConnection();
   runApp(const MyApp());
 }
@@ -32,7 +45,7 @@ class MyApp extends StatelessWidget {
       },
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/homeMain',
+        initialRoute: '/',
         getPages: AppRoutes.routes,
         // theme: ThemeData(
         //   scaffoldBackgroundColor: AppColors.background,

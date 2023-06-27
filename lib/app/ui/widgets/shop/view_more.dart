@@ -100,19 +100,10 @@ class ShopViewMoreCard extends StatelessWidget {
                             width: 2,
                             color: AppColors.grey.withOpacity(.4),
                           ),
-                          SizedBox(
-                            width: media.width * 0.01,
-                          ),
                           const CommonText(
                             text: "10:30Am - 08:00PM",
                           ),
-                          SizedBox(
-                            width: media.width * 0.01,
-                          ),
                           const Icon(Icons.arrow_drop_down_outlined),
-                          SizedBox(
-                            width: media.width * 0.02,
-                          ),
                         ],
                       ),
                     ),

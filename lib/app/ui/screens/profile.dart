@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tieup/app/ui/screens/career/vendor/career_vendor.dart';
+import 'package:tieup/app/ui/screens/enquiry/vendor/enquiry_vendor.dart';
 import 'package:tieup/app/ui/themes/colors.dart';
 import 'package:tieup/app/ui/themes/font_size.dart';
 import 'package:tieup/app/ui/widgets/common_text.dart';
@@ -19,10 +21,15 @@ class Profile extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 1,
         automaticallyImplyLeading: false,
-        leading: const Icon(
-          Icons.arrow_back_ios_new,
-          color: AppColors.black,
-          size: 20,
+        leading: GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+          child: const Icon(
+            Icons.arrow_back_ios_new,
+            color: AppColors.black,
+            size: 20,
+          ),
         ),
         actions: [
           const Icon(
@@ -190,7 +197,9 @@ class Profile extends StatelessWidget {
                 return GestureDetector(
                   onTap: () {
                     if (index == 0) {
+                      Get.to(() => EnquiryForVendor());
                     } else if (index == 1) {
+                      Get.to(() => CareerForVendor());
                     } else if (index == 2) {
                       Get.to(() => FlickDream());
                     } else if (index == 3) {}

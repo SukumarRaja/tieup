@@ -495,7 +495,7 @@ locationSet(BuildContext context) {
                         CommonText(
                           text: "Your current location",
                           fontColor: AppColors.white,
-                          fontSize: AppFontSize.twenty,
+                          fontSize: AppFontSize.sixteen,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1,
                         ),
@@ -534,7 +534,7 @@ locationSet(BuildContext context) {
                         CommonText(
                           text: "Some other location",
                           fontColor: AppColors.black,
-                          fontSize: AppFontSize.twenty,
+                          fontSize: AppFontSize.sixteen,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1,
                         ),

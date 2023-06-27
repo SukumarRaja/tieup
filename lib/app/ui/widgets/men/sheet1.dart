@@ -12,7 +12,7 @@ class SheetOneCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Container(
-        width: media.width / 1.13,
+        width: media.width / 1,
         margin: const EdgeInsets.only(left: 10, bottom: 15, top: 15, right: 0),
         decoration: BoxDecoration(
             color: AppColors.white,

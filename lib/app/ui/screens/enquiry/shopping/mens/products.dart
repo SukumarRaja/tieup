@@ -200,7 +200,7 @@ class MenProducts extends StatelessWidget {
 
                     //sheet1
                     SizedBox(
-                      height: media.height * 0.25,
+                      height: media.height * 0.28,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0),
                         child: ListView.builder(
@@ -246,7 +246,7 @@ class MenProducts extends StatelessWidget {
 
                     //sheet2
                     SizedBox(
-                      height: media.height * 0.20,
+                      height: media.height * 0.23,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ListView.builder(

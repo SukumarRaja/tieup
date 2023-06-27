@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tieup/app/ui/themes/font_size.dart';
 import 'package:tieup/app/ui/widgets/common_text.dart';
+import 'package:tieup/app/ui/widgets/home/career_card.dart';
 import '../../../controller/slider.dart';
 import '../../../utility/degings.dart';
 import '../../themes/colors.dart';
@@ -13,7 +14,7 @@ import '../../widgets/home/location_text.dart';
 import '../../widgets/home/logo_and_profile.dart';
 import '../../widgets/home/lucky_draw.dart';
 import '../../widgets/home/prize_card.dart';
-import '../../widgets/home/skill_card.dart';
+import '../../widgets/home/flickdream_card.dart';
 import '../../widgets/home/video_ad.dart';
 import '../../widgets/main/green_bubble.dart';
 
@@ -92,10 +93,11 @@ class Home extends StatelessWidget {
                     const LocationText(),
 
                     // enquiry and skill card
-                    Row(
+                    Column(
                       children: const [
                         EnquiryCard(),
-                        SkillCard(),
+                        CareerCard(),
+                        FlickDreamCard(),
                       ],
                     ),
 
