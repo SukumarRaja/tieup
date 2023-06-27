@@ -31,7 +31,7 @@ class Profile extends StatelessWidget {
       ),
       body: SafeArea(
           child: ListView(
-            physics: BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         children: [
           Container(
             margin: const EdgeInsets.all(15),
@@ -185,39 +185,48 @@ class Profile extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, childAspectRatio: 1.6),
               itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.all(8),
-                  // padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: AppColors.white),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 15.0, vertical: 8),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppColors.primary.withOpacity(.15)),
-                          padding: const EdgeInsets.all(5),
-                          child: const Icon(
-                            Icons.business_center,
-                            size: 18,
-                            color: AppColors.primary,
+                return GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    margin: const EdgeInsets.all(8),
+                    // padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.primary.withOpacity(.15)),
+                            padding: const EdgeInsets.all(5),
+                            child: const Icon(
+                              Icons.business_center,
+                              size: 18,
+                              color: AppColors.primary,
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const CommonText(
-                          text: "Enquiry",
-                          fontSize: AppFontSize.eighteen,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ],
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          CommonText(
+                            text: index == 0
+                                ? "Enquiry"
+                                : index == 1
+                                    ? "Career"
+                                    : index == 2
+                                        ? "Flick Dream"
+                                        : "Luckydraw",
+                            fontSize: AppFontSize.eighteen,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
@@ -271,12 +280,19 @@ class Profile extends StatelessWidget {
                       "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
                     ))),
           ),
-          SizedBox(height: 10,),
-          buildContainer(name: "About", icon: Icons.hexagon_outlined, onTap: (){}),
-          buildContainer(name: "About", icon: Icons.hexagon_outlined, onTap: (){}),
-          buildContainer(name: "About", icon: Icons.hexagon_outlined, onTap: (){}),
-          buildContainer(name: "About", icon: Icons.hexagon_outlined, onTap: (){}),
-          buildContainer(name: "About", icon: Icons.hexagon_outlined, onTap: (){}),
+          SizedBox(
+            height: 10,
+          ),
+          buildContainer(
+              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+          buildContainer(
+              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+          buildContainer(
+              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+          buildContainer(
+              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+          buildContainer(
+              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
         ],
       )),
     );
@@ -286,7 +302,7 @@ class Profile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 6),
+        margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10), color: AppColors.white),
