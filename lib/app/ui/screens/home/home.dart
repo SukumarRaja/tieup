@@ -31,6 +31,87 @@ class Home extends StatelessWidget {
         //     borderRadius: BorderRadius.only(
         //         topRight: Radius.circular(15),
         //         bottomRight: Radius.circular(15))),
+
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            Container(
+              margin: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: AppColors.white),
+              child: Row(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: AppColors.black.withOpacity(.2),
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset: const Offset(0.3, 0.3))
+                        ],
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                "https://media.licdn.com/dms/image/C5103AQEBnEMejoGBrw/profile-displayphoto-shrink_800_800/0/1555953611010?e=2147483647&v=beta&t=1ZGtNOpKvJj5DIKhh8O1zHXGZ3XB6FRpmHo1DDP1vU0"))),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      CommonText(
+                        text: "Name",
+                        fontSize: AppFontSize.eighteen,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      CommonText(
+                        text: "#TU2464AJM6336",
+                        fontSize: AppFontSize.sixteen,
+                        fontColor: AppColors.grey,
+                      ),
+                      CommonText(
+                        text: "1234567890",
+                        fontSize: AppFontSize.sixteen,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const Divider(
+              thickness: 2,
+            ),
+            buildContainer(name: "Profile", icon: Icons.person, onTap: () {}),
+            buildContainer(
+                name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+            buildContainer(
+                name: "Help & Support", icon: Icons.info_outline, onTap: () {}),
+            buildContainer(
+                name: "Settings", icon: Icons.settings, onTap: () {}),
+            buildContainer(
+                name: "Privacy",
+                icon: Icons.privacy_tip_outlined,
+                onTap: () {}),
+            const Center(
+              child: CommonText(
+                text: "v1.0.0",
+                fontSize: AppFontSize.fourteen,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            )
+          ],
+        ),
       ),
       body: SafeArea(
         child: Stack(
@@ -259,6 +340,48 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  GestureDetector buildContainer({name, icon, required Function() onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10), color: AppColors.white),
+        child: Row(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.primary.withOpacity(.15)),
+              padding: const EdgeInsets.all(5),
+              child: Icon(
+                icon,
+                size: 18,
+                color: AppColors.primary,
+              ),
+            ),
+            const SizedBox(
+              width: 15,
+            ),
+            CommonText(
+              text: name,
+              fontSize: AppFontSize.eighteen,
+              fontWeight: FontWeight.w500,
+            ),
+            // const Spacer(),
+            // const Icon(
+            //   Icons.arrow_forward_ios_outlined,
+            //   size: 18,
+            //   color: AppColors.black,
+            // )
           ],
         ),
       ),

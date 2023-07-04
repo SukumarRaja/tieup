@@ -22,7 +22,7 @@ class Profile extends StatelessWidget {
         elevation: 1,
         automaticallyImplyLeading: false,
         leading: GestureDetector(
-          onTap: (){
+          onTap: () {
             Get.back();
           },
           child: const Icon(
@@ -303,13 +303,12 @@ class Profile extends StatelessWidget {
           buildContainer(
               name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
           buildContainer(
-              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+              name: "Help & Support", icon: Icons.info_outline, onTap: () {}),
+          buildContainer(name: "Settings", icon: Icons.settings, onTap: () {}),
           buildContainer(
-              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+              name: "Privacy", icon: Icons.privacy_tip_outlined, onTap: () {}),
           buildContainer(
-              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
-          buildContainer(
-              name: "About", icon: Icons.hexagon_outlined, onTap: () {}),
+              name: "Logout", icon: Icons.logout_outlined, onTap: () {}),
         ],
       )),
     );

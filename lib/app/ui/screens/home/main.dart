@@ -68,27 +68,27 @@ class HomeMain extends StatelessWidget {
             //   ),
             // ),\
 
-            bottomNavigationBar: Obx(() => CurvedNavigationBar(
-                  // key: _bottomNavigationKey,
-                  index: MainController.to.pageIndex,
-                  height: 50.0,
-                  items: <Widget>[
-                    buildDecoratedIcon(icon: Icons.person),
-                    buildDecoratedIcon(icon: Icons.shopping_cart),
-                    buildDecoratedIcon(icon: Icons.home_filled),
-                    buildDecoratedIcon(icon: Icons.local_offer),
-                    buildDecoratedIcon(icon: Icons.settings),
-                  ],
-                  color: Colors.white,
-                  buttonBackgroundColor: Colors.white,
-                  backgroundColor: AppColors.black.withOpacity(.02),
-                  animationCurve: Curves.easeInOut,
-                  animationDuration: const Duration(milliseconds: 600),
-                  onTap: (index) {
-                    MainController.to.pageIndex = index;
-                  },
-                  letIndexChange: (index) => true,
-                )),
+            // bottomNavigationBar: Obx(() => CurvedNavigationBar(
+            //       // key: _bottomNavigationKey,
+            //       index: MainController.to.pageIndex,
+            //       height: 50.0,
+            //       items: <Widget>[
+            //         buildDecoratedIcon(icon: Icons.person),
+            //         buildDecoratedIcon(icon: Icons.shopping_cart),
+            //         buildDecoratedIcon(icon: Icons.home_filled),
+            //         buildDecoratedIcon(icon: Icons.local_offer),
+            //         buildDecoratedIcon(icon: Icons.settings),
+            //       ],
+            //       color: Colors.white,
+            //       buttonBackgroundColor: Colors.white,
+            //       backgroundColor: AppColors.black.withOpacity(.02),
+            //       animationCurve: Curves.easeInOut,
+            //       animationDuration: const Duration(milliseconds: 600),
+            //       onTap: (index) {
+            //         MainController.to.pageIndex = index;
+            //       },
+            //       letIndexChange: (index) => true,
+            //     )),
             body: Obx(() => pages[MainController.to.pageIndex]),
           );
         });
