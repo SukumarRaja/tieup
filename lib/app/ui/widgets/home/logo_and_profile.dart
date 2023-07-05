@@ -33,8 +33,8 @@ class LogoAndProfile extends StatelessWidget {
                 color: Colors.transparent,
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "https://upload.wikimedia.org/wikipedia/commons/8/89/Sky_3D_DE_Logo_2015.png"))),
+                    image: AssetImage(
+                        "assets/images/logo.png"))),
           ),
           const Spacer(),
           const DecoratedIcon(
