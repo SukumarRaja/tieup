@@ -10,11 +10,21 @@ class LocationText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-    return SizedBox(
+    return Container(
+      decoration: BoxDecoration(color: AppColors.secondary.withOpacity(.7)),
       height: 50,
       width: media.width,
       child: Row(
         children: [
+          SizedBox(
+            width: media.width * 0.02,
+          ),
+          CommonText(
+            text: "All Category",
+            fontWeight: FontWeight.w600,
+            fontSize: AppFontSize.twenty,
+          ),
+          Spacer(),
           SizedBox(
             width: media.width * 0.02,
           ),
@@ -42,7 +52,7 @@ class LocationText extends StatelessWidget {
                 ],
               ),
               CommonText(
-                text: "2nd street, DB Road, RS Puram...",
+                text: "DB Road,RS Puram...",
                 fontColor: AppColors.black.withOpacity(.4),
               ),
             ],

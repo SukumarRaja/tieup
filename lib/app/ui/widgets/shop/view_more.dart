@@ -220,92 +220,92 @@ class ShopViewMoreCard extends StatelessWidget {
                   ],
                 ),
                 Obx(() => ShopController.to.isClickViewMore == true
-                    ? const SizedBox()
-                    : GestureDetector(
-                        onTap: () {
-                          ShopController.to.isClickViewMore = true;
-                        },
-                        child: Container(
-                          height: 40,
-                          width: media.width,
-                          margin: const EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            color: AppColors.green,
-                            borderRadius: BorderRadius.circular(8.0),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: AppColors.grey.withOpacity(.3),
-                                  spreadRadius: 1,
-                                  blurRadius: 1,
-                                  offset: const Offset(0.2, 0.2))
-                            ],
-                            gradient: const LinearGradient(
-                                colors: [AppColors.primary, AppColors.gradient],
-                                begin: Alignment.topRight,
-                                end: Alignment.topLeft),
-                          ),
-                          child: Center(
-                            child: const CommonText(
-                              text: "View more information",
-                              fontColor: AppColors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      )),
-                Obx(() => ShopController.to.isClickViewMore == true
-                    ? const Padding(
-                        padding: EdgeInsets.only(right: 8.0, left: 8.0),
-                        child: Divider(
-                          thickness: 2,
-                        ),
-                      )
-                    : const SizedBox()),
-                Obx(() => ShopController.to.isClickViewMore == true
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: CommonText(
-                          text: "Photos",
-                          fontSize: AppFontSize.eighteen,
-                          fontColor: AppColors.gradient,
-                        ),
-                      )
+                    ? GestureDetector(
+                  onTap: () {
+                    ShopController.to.isClickViewMore = true;
+                  },
+                  child: Container(
+                    height: 40,
+                    width: media.width,
+                    margin: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: AppColors.green,
+                      borderRadius: BorderRadius.circular(8.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: AppColors.grey.withOpacity(.3),
+                            spreadRadius: 1,
+                            blurRadius: 1,
+                            offset: const Offset(0.2, 0.2))
+                      ],
+                      gradient: const LinearGradient(
+                          colors: [AppColors.primary, AppColors.gradient],
+                          begin: Alignment.topRight,
+                          end: Alignment.topLeft),
+                    ),
+                    child: Center(
+                      child: const CommonText(
+                        text: "View more information",
+                        fontColor: AppColors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                )
                     : SizedBox()),
-                Obx(() => ShopController.to.isClickViewMore == true
-                    ? SizedBox(
-                        height: media.height * 0.14,
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(right: 10.0, left: 8.0),
-                          child: ListView.builder(
-                              shrinkWrap: true,
-                              itemCount: 5,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, int index) {
-                                return Container(
-                                  width: 105,
-                                  margin: EdgeInsets.all(5),
-                                  decoration: BoxDecoration(
-                                      color: AppColors.white,
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color:
-                                                AppColors.grey.withOpacity(.3),
-                                            spreadRadius: 1,
-                                            blurRadius: 1,
-                                            offset: const Offset(0.2, 0.2))
-                                      ],
-                                      image: DecorationImage(
-                                          alignment: Alignment.topCenter,
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage(
-                                              "https://pngimg.com/d/tshirt_PNG5448.png"))),
-                                );
-                              }),
-                        ),
-                      )
-                    : SizedBox()),
+                // Obx(() => ShopController.to.isClickViewMore == true
+                //     ? const Padding(
+                //         padding: EdgeInsets.only(right: 8.0, left: 8.0),
+                //         child: Divider(
+                //           thickness: 2,
+                //         ),
+                //       )
+                //     : const SizedBox()),
+                // Obx(() => ShopController.to.isClickViewMore == true
+                //     ? Padding(
+                //         padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                //         child: CommonText(
+                //           text: "Photos",
+                //           fontSize: AppFontSize.eighteen,
+                //           fontColor: AppColors.gradient,
+                //         ),
+                //       )
+                //     : SizedBox()),
+                // Obx(() => ShopController.to.isClickViewMore == true
+                //     ? SizedBox(
+                //         height: media.height * 0.14,
+                //         child: Padding(
+                //           padding:
+                //               const EdgeInsets.only(right: 10.0, left: 8.0),
+                //           child: ListView.builder(
+                //               shrinkWrap: true,
+                //               itemCount: 5,
+                //               scrollDirection: Axis.horizontal,
+                //               itemBuilder: (context, int index) {
+                //                 return Container(
+                //                   width: 105,
+                //                   margin: EdgeInsets.all(5),
+                //                   decoration: BoxDecoration(
+                //                       color: AppColors.white,
+                //                       borderRadius: BorderRadius.circular(8.0),
+                //                       boxShadow: [
+                //                         BoxShadow(
+                //                             color:
+                //                                 AppColors.grey.withOpacity(.3),
+                //                             spreadRadius: 1,
+                //                             blurRadius: 1,
+                //                             offset: const Offset(0.2, 0.2))
+                //                       ],
+                //                       image: DecorationImage(
+                //                           alignment: Alignment.topCenter,
+                //                           fit: BoxFit.cover,
+                //                           image: NetworkImage(
+                //                               "https://pngimg.com/d/tshirt_PNG5448.png"))),
+                //                 );
+                //               }),
+                //         ),
+                //       )
+                //     : SizedBox()),
               ],
             ),
             const Positioned(

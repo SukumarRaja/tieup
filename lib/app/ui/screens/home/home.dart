@@ -131,10 +131,30 @@ class Home extends StatelessWidget {
 
             //logo and profile image
             const LogoAndProfile(),
+            Padding(
+              padding: const EdgeInsets.only(top: 80.0),
+              child: Obx(
+                () => SliderController.to.loadingSliders == true
+                    ? const Text("Loading")
+                    : CommonSlider(
+                        // imageSliders: SliderController.to.imageSlider,
+                        dbImage: SliderController.to.dbImage,
+                        imageSliders: const [
+                          "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
+                          "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+                          "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
+                        ],
+                      ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 225.0),
+              child: LocationText(),
+            ),
 
             //body
             Padding(
-              padding: const EdgeInsets.only(top: 80.0),
+              padding: const EdgeInsets.only(top: 290.0),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -143,35 +163,21 @@ class Home extends StatelessWidget {
                     // ),
 
                     //running banner or sliders
-                    // Obx(
-                    //   () => SliderController.to.loadingSliders == true
-                    //       ? const Text("Loading")
-                    //       : CommonSlider(
-                    //           // imageSliders: SliderController.to.imageSlider,
-                    //           dbImage: SliderController.to.dbImage,
-                    //           imageSliders: const [
-                    //             "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
-                    //             "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+
+                    // Container(
+                    //   height: 150,
+                    //   width: media.width,
+                    //   margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                    //   decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(8.0),
+                    //       image: const DecorationImage(
+                    //           fit: BoxFit.cover,
+                    //           image: NetworkImage(
                     //             "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
-                    //           ],
-                    //         ),
+                    //           ))),
                     // ),
 
-                    Container(
-                      height: 150,
-                      width: media.width,
-                      margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
-                          image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
-                              ))),
-                    ),
-
                     // location text
-                    const LocationText(),
 
                     // enquiry and skill card
                     Column(
@@ -217,7 +223,6 @@ class Home extends StatelessWidget {
                               imageSliders: const [
                                 "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
                                 "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
-                                "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
                               ],
                             ),
                     ),

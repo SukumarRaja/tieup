@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 class ShopController extends GetxController {
   static ShopController get to => Get.put(ShopController());
 
-  final _isClickViewMore = true.obs;
+  final _isClickViewMore = false.obs;
 
   get isClickViewMore => _isClickViewMore.value;
 

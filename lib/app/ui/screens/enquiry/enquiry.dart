@@ -9,6 +9,7 @@ import '../../themes/colors.dart';
 import '../../themes/font_size.dart';
 import '../../widgets/banner.dart';
 import '../../widgets/common_text.dart';
+import '../../widgets/home/location_text.dart';
 import '../../widgets/main/green_bubble.dart';
 import 'shopping/shopping.dart';
 
@@ -65,76 +66,29 @@ class Enquiry extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 70.0),
+              child: Obx(
+                () => SliderController.to.loadingSliders == true
+                    ? const Text("Loading")
+                    : Obx(() => CommonSlider(
+                          // imageSliders: SliderController.to.imageSlider,
+                          dbImage: SliderController.to.dbImage,
+                          imageSliders: const [
+                            "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
+                            "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
+                            "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
+                          ],
+                        )),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 215.0),
+              child: LocationText(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 270.0),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Obx(
-                      () => SliderController.to.loadingSliders == true
-                          ? const Text("Loading")
-                          : Obx(() => CommonSlider(
-                                // imageSliders: SliderController.to.imageSlider,
-                                dbImage: SliderController.to.dbImage,
-                                imageSliders: const [
-                                  "https://codecanyon.img.customer.envatousercontent.com/files/416365027/Preview590x300.png?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=5964870d4d6cefefb5d3f913cf7827ec",
-                                  "https://www.bharattaxi.com/blog/wp-content/uploads/2020/04/modern-sale-banner-website-slider-template-design_54925-44.jpg",
-                                  "https://img.freepik.com/premium-vector/modern-sale-banner-website-slider-template-design_54925-46.jpg",
-                                ],
-                              )),
-                    ),
-                    Container(
-                      height: 50,
-                      width: media.width,
-                      // margin: EdgeInsets.only(right: 8.0, left: 8.0),
-                      decoration: const BoxDecoration(
-                          // color: AppColors.secondary,
-                          ),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: media.width * 0.02,
-                          ),
-                          // CommonText(
-                          //   text: "All Features",
-                          //   fontSize: AppFontSize.sixteen,
-                          //   fontWeight: FontWeight.w600,
-                          // ),
-                          // Spacer(),
-                          DecoratedIcon(
-                            Icons.location_on,
-                            color: AppColors.primary,
-                            size: 35,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Row(
-                                children: [
-                                  CommonText(
-                                    text: "Coimbatore",
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: AppFontSize.fifteen,
-                                  ),
-                                  Icon(
-                                    Icons.keyboard_arrow_down,
-                                    size: 18,
-                                    color: AppColors.black.withOpacity(.4),
-                                  )
-                                ],
-                              ),
-                              CommonText(
-                                text: "2nd street, DB Road, RS Puram...",
-                                fontColor: AppColors.black.withOpacity(.4),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: media.width * 0.02,
-                          )
-                        ],
-                      ),
-                    ),
-
                     //shopping
                     Container(
                       width: media.width,
@@ -175,19 +129,21 @@ class Enquiry extends StatelessWidget {
                               return Column(
                                 children: [
                                   GestureDetector(
-                                    onTap: (){
-                                    Get.to(()=>Shopping());
+                                    onTap: () {
+                                      Get.to(() => Shopping());
                                     },
                                     child: Container(
                                       margin: EdgeInsets.all(5.0),
                                       padding: EdgeInsets.all(15.0),
                                       decoration: BoxDecoration(
-                                        color: AppColors.primary.withOpacity(.1),
-                                        borderRadius: BorderRadius.circular(10.0),
+                                        color:
+                                            AppColors.primary.withOpacity(.1),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
                                         boxShadow: [
                                           BoxShadow(
-                                              color:
-                                                  AppColors.white.withOpacity(.1),
+                                              color: AppColors.white
+                                                  .withOpacity(.1),
                                               spreadRadius: 1,
                                               blurRadius: 1,
                                               offset: Offset(0.3, 0.3))
@@ -343,33 +299,31 @@ class Enquiry extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    // last add
-                    Container(
-                      width: media.width,
-                      height: 150,
-                      // margin: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          color: AppColors.white.withOpacity(.7),
-                          borderRadius: BorderRadius.circular(8.0),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  "https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2021/09/27/160399-flipkar-saleflipkar-twitter.jpg?itok=u0Yll_bl")),
-                          boxShadow: [
-                            BoxShadow(
-                                color: AppColors.grey.withOpacity(.3),
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset: Offset(0.2, 0.2))
-                          ]),
-                    ),
                   ],
                 ),
               ),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        width: media.width,
+        height: 120,
+        // margin: EdgeInsets.all(15),
+        decoration: BoxDecoration(
+            color: AppColors.white.withOpacity(.7),
+            // borderRadius: BorderRadius.circular(8.0),
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    "https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2021/09/27/160399-flipkar-saleflipkar-twitter.jpg?itok=u0Yll_bl")),
+            boxShadow: [
+              BoxShadow(
+                  color: AppColors.grey.withOpacity(.3),
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  offset: Offset(0.2, 0.2))
+            ]),
       ),
     );
   }
